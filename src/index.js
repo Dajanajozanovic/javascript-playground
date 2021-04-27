@@ -1,3 +1,18 @@
-import AppHeader from './components/AppHeader'
+console.clear()
+const box = document.querySelector('.box')
+const buttonRotate = document.querySelector('.button-rotate')
+const buttonBackground = document.querySelector('.button-background')
+const buttonRadius = document.querySelector('.button-radius')
 
-document.body.append(AppHeader('JavaScript App Template'))
+buttonRotate.addEventListener('click', () => {
+  box.classList.toggle('rotate')
+})
+
+buttonBackground.addEventListener('click', () => {
+  box.classList.toggle('background')
+})
+
+buttonRadius.addEventListener('click', () => {
+  box.classList.toggle('radius')
+})
+          
