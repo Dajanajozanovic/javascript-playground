@@ -4,29 +4,27 @@
 
 body {
   display: grid;
-  place-items: center;
+  grid-template-rows: auto 48px;
   height: 100vh;
 }
 
-.box {
-  width: 200px;
-  height: 200px;
+main[class^='page'] {
+  background: steelblue;
+  display: grid;
+  place-items: center;
+}
+
+button {
+  border: none;
+}
+
+.navigation {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(4, 1fr);
+  background: #ccc;
+}
+
+.active {
   background: hotpink;
-  transition: all 0.4s ease-in-out;
-}
-
-.blue {
-  background: skyblue;
-}
-
-.rotate {
-  transform: rotate(45deg);
-}
-
-.background {
-  background-color: green;
-}
-
-.radius {
-  border-radius: 50%;
 }
