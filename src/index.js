@@ -1,13 +1,10 @@
 const form = document.querySelector('[data-form]')
-const box = document.querySelector('[data-box]')
-const input = document.querySelector('[name="class"]')
-const output = document.querySelector('[data-output]')
+const input1 = document.querySelector('[name="first"]')
+const input2 = document.querySelector('[name="second"]')
 
 form.addEventListener('submit', event => {
   event.preventDefault()
-  box.className = 'box ' + input.value
-
-  output.innerText = input.value.toUpperCase()
-  input.value = ''
-  input.focus()
+  const firstValue = input1.value
+  input1.value = input2.value.toUpperCase()
+  input2.value = firstValue.toLowerCase()
 })
