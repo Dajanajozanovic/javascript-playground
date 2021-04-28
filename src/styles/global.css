@@ -7,3 +7,18 @@ body {
   place-items: center;
   height: 100vh;
 }
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: #aaa;
+  transition: all 0.4s;
+}
+
+.background {
+  background-color: hotpink;
+}
+
+.rotate {
+  transform: rotate(20deg);
+}
