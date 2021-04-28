@@ -3,12 +3,15 @@
 @import './_utility.css';
 
 body {
-  margin: 0 auto;
-  padding: 20px;
+  display: grid;
+  gap: 20px;
   max-width: 400px;
+  margin: 20px auto;
+  justify-items: center;
 }
 
 form {
+  padding: 20px;
   display: grid;
   gap: 20px;
 }
@@ -18,5 +21,12 @@ label {
 }
 
 input {
-  border: 1px solid #333;
+  border: 2px solid #aaa;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background: #aaa;
+  transition: all 0.4s;
 }

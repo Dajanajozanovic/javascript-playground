@@ -1,10 +1,11 @@
+const box = document.querySelector('[data-box]')
 const form = document.querySelector('[data-form]')
-const input1 = document.querySelector('[name="first"]')
-const input2 = document.querySelector('[name="second"]')
+const input = document.querySelector('[name="color"]')
 
 form.addEventListener('submit', event => {
   event.preventDefault()
-  const firstValue = input1.value
-  input1.value = input2.value.toUpperCase()
-  input2.value = firstValue.toLowerCase()
+  const color = input.value
+  box.style.backgroundColor = color
+  input.value = ''
+  input.focus()
 })
