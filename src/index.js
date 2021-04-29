@@ -8,46 +8,69 @@ const bookmarksPage = document.querySelector('.page-bookmarks')
 const createPage = document.querySelector('.page-create')
 const settingsPage = document.querySelector('.page-settings')
 
-buttonHome.addEventListener('click', () => {
-  homePage.classList.remove('hidden')
+const hideAllpages = () => {
+  homePage.classList.add('hidden')
   bookmarksPage.classList.add('hidden')
   createPage.classList.add('hidden')
   settingsPage.classList.add('hidden')
-  buttonHome.classList.add('active')
+}
+
+const deactivateButtons = () => {
+  buttonHome.classList.remove('active')
   buttonBookmarks.classList.remove('active')
   buttonCreate.classList.remove('active')
   buttonSettings.classList.remove('active')
+}
+
+buttonHome.addEventListener('click', () => {
+  hideAllpages()
+  homePage.classList.remove('hidden')
+})
+
+buttonHome.addEventListener('click', () => {
+  deactivateButtons()
+  buttonHome.classList.add('active')
 })
 
 buttonBookmarks.addEventListener('click', () => {
-  homePage.classList.add('hidden')
+  hideAllpages()
   bookmarksPage.classList.remove('hidden')
-  createPage.classList.add('hidden')
-  settingsPage.classList.add('hidden')
-  buttonHome.classList.remove('active')
+})
+
+buttonBookmarks.addEventListener('click', () => {
+  deactivateButtons()
   buttonBookmarks.classList.add('active')
-  buttonCreate.classList.remove('active')
-  buttonSettings.classList.remove('active')
 })
 
 buttonCreate.addEventListener('click', () => {
-  homePage.classList.add('hidden')
-  bookmarksPage.classList.add('hidden')
+  hideAllpages()
   createPage.classList.remove('hidden')
-  settingsPage.classList.add('hidden')
-  buttonHome.classList.remove('active')
-  buttonBookmarks.classList.remove('active')
+})
+
+buttonCreate.addEventListener('click', () => {
+  deactivateButtons()
   buttonCreate.classList.add('active')
-  buttonSettings.classList.remove('active')
 })
 
 buttonSettings.addEventListener('click', () => {
+  hideAllpages()
+  settingsPage.classList.remove('hidden')
+})
+
+buttonSettings.addEventListener('click', () => {
+  deactivateButtons()
+  buttonSettings.classList.add('active')
+})
+
+function hideAllpages() {
   homePage.classList.add('hidden')
   bookmarksPage.classList.add('hidden')
   createPage.classList.add('hidden')
-  settingsPage.classList.remove('hidden')
+  settingsPage.classList.add('hidden')
+}
+function deactivateButtons() {
   buttonHome.classList.remove('active')
   buttonBookmarks.classList.remove('active')
   buttonCreate.classList.remove('active')
-  buttonSettings.classList.add('active')
-})
+  buttonSettings.classList.remove('active')
+}
